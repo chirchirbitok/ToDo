@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'models/global.dart';
 
 void main() {
   runApp(const MyApp());
@@ -41,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
             body: Stack(children: <Widget>[
               TabBarView(children: [
                 Container(
-                  color: Colors.yellow,
+                  color: darkGreyColor,
                 ),
                 Container(
                   color: Colors.orange,
@@ -51,11 +52,42 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ]),
               Container(
-                height: 100,
-                color: Colors.white,
+                padding: EdgeInsets.only(left: 50),
+                height: 160,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(50),
+                      bottomRight: Radius.circular(50)),
+                  color: Colors.white,
+                ),
+                child: Row(
+                  children: <Widget>[
+                    Text(
+                      "Intray",
+                      style: intrayTitleStyle,
+                    ),
+                    Container()
+                  ],
+                ),
+              ),
+              Container(
+                height: 80,
+                width: 80,
+                margin: EdgeInsets.only(
+                    top: 120,
+                    left: MediaQuery.of(context).size.width * 0.5 - 40),
+                child: FloatingActionButton(
+                  child: Icon(
+                    Icons.add,
+                    size: 70,
+                  ),
+                  backgroundColor: redColor,
+                  onPressed: () {},
+                ),
               )
             ]),
             appBar: AppBar(
+              elevation: 0,
               title: TabBar(
                 tabs: [
                   Tab(
@@ -68,11 +100,13 @@ class _MyHomePageState extends State<MyHomePage> {
                     icon: new Icon(Icons.perm_identity),
                   )
                 ],
-                labelColor: Colors.yellow,
+                labelColor: darkGreyColor,
                 unselectedLabelColor: Colors.blue,
                 indicatorSize: TabBarIndicatorSize.label,
                 indicatorPadding: EdgeInsets.all(5.0),
+                indicatorColor: Colors.transparent,
               ),
+              backgroundColor: Colors.white,
             ),
             backgroundColor: Colors.white,
           ),
