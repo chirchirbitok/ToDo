@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todoapp/UI/Intray/intray_page.dart';
 import 'models/global.dart';
 
 void main() {
@@ -41,9 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Scaffold(
             body: Stack(children: <Widget>[
               TabBarView(children: [
-                Container(
-                  color: darkGreyColor,
-                ),
+                IntrayPage(),
                 Container(
                   color: Colors.orange,
                 ),
