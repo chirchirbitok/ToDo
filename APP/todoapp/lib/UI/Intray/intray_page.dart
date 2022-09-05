@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todoapp/models/global.dart';
+import 'package:todoapp/models/widgets/intray_todo_widjet.dart';
 
 class IntrayPage extends StatefulWidget {
   const IntrayPage({Key? key}) : super(key: key);
@@ -15,53 +16,16 @@ class _IntrayPageState extends State<IntrayPage> {
       color: darkGreyColor,
       child: ListView(
         padding: EdgeInsets.only(top: 270),
-        children: getList(),
+        children: getList,
       ),
     );
   }
 
-  List<Widget> getList() {
-    return [
-      Container(
-        height: 100,
-        color: Colors.red,
-      ),
-      Container(
-        height: 100,
-        color: Colors.green,
-      ),
-      Container(
-        height: 100,
-        color: Colors.red,
-      ),
-      Container(
-        height: 100,
-        color: Colors.green,
-      ),
-      Container(
-        height: 100,
-        color: Colors.red,
-      ),
-      Container(
-        height: 100,
-        color: Colors.green,
-      ),
-      Container(
-        height: 100,
-        color: Colors.red,
-      ),
-      Container(
-        height: 100,
-        color: Colors.green,
-      ),
-      Container(
-        height: 100,
-        color: Colors.red,
-      ),
-      Container(
-        height: 100,
-        color: Colors.green,
-      ),
-    ];
+  List<Widget> get getList {
+    List<IntrayTodo> list = [];
+    for (int i = 0; i < 10; i++) {
+      list.add(IntrayTodo("Hello"));
+    }
+    return list;
   }
 }
