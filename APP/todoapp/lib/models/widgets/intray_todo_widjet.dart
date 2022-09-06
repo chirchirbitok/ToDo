@@ -3,10 +3,12 @@ import 'package:todoapp/models/global.dart';
 
 class IntrayTodo extends StatelessWidget {
   final String title;
-  IntrayTodo(this.title);
+  String keyValue;
+  IntrayTodo(this.keyValue, this.title, {Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
+      key: Key(keyValue),
       margin: EdgeInsets.only(bottom: 15, right: 15, left: 15),
       padding: EdgeInsets.all(10),
       height: 100,
